@@ -161,10 +161,6 @@ collections:
       - label: "Bio"
         name: "bio"
         widget: "text"
-      - label: "GitHub Username"
-        name: "github_username"
-        widget: "string"
-        required: false
       - label: "Facebook Username"
         name: "facebook_username"
         widget: "string"
@@ -175,14 +171,6 @@ collections:
         required: false
       - label: "Instagram Username"
         name: "instagram_username"
-        widget: "string"
-        required: false
-      - label: "LinkedIn Username"
-        name: "linkedin_username"
-        widget: "string"
-        required: false
-      - label: "Medium Username"
-        name: "medium_username"
         widget: "string"
         required: false
   - label: "Settings"
@@ -247,10 +235,6 @@ collections:
         name: "social"
         file: "src/yml/social.yml"
         fields:
-          - label: "GitHub Username"
-            name: "github_username"
-            widget: "string"
-            required: false
           - label: "Facebook Username"
             name: "facebook_username"
             widget: "string"
@@ -261,14 +245,6 @@ collections:
             required: false
           - label: "Instagram Username"
             name: "instagram_username"
-            widget: "string"
-            required: false
-          - label: "LinkedIn Username"
-            name: "linkedin_username"
-            widget: "string"
-            required: false
-          - label: "Medium Username"
-            name: "medium_username"
             widget: "string"
             required: false
       - label: "Theme"

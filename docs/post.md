@@ -23,13 +23,13 @@ A *Jekflix* post file looks like:
 ---
 date: 2019-05-16 23:48:05
 layout: post
-title: Welcome to the desert of the real
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+title: Figures Hotel
+subtitle: The most relaxing experience.
 description: >-
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.
-image: https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
-optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
+image: https://www.shutterstock.com/image-photo/luxury-hotel-room-modern-classic-style-cozy-2521917539.jpg
+optimized_image: https://www.shutterstock.com/image-photo/luxury-hotel-room-modern-classic-style-cozy-2521917539.jpg
 category: blog
 tags:
   - welcome
@@ -87,7 +87,7 @@ Example:
 # _posts/2019-08-22-example.md
 ---
 ...
-title: Welcome to the desert of the real
+title: Figures Hotel
 ...
 ---
 ```
@@ -146,7 +146,7 @@ Example:
 # _posts/2019-08-22-example.md
 ---
 ...
-image: https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
+image: https://www.shutterstock.com/image-photo/luxury-hotel-room-modern-classic-style-cozy-2521917539.jpg
 ...
 ---
 ```
@@ -169,7 +169,7 @@ Example:
 # _posts/2019-08-22-example.md
 ---
 ...
-optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
+optimized_image: https://www.shutterstock.com/image-photo/luxury-hotel-room-modern-classic-style-cozy-2521917539.jpg
 ...
 ---
 ```
