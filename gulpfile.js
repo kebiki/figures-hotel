@@ -15,14 +15,19 @@ import { deleteAsync } from "del";
 import fs from "fs";
 import jsonSass from "json-sass";
 import source from "vinyl-source-stream";
+import ghPages from "gulp-gh-pages";
 
+gulp.task('deploy', function () {
+  return gulp.src('./_site/**/*')
+      .pipe(ghPages());
+});
 
 /**
  * Notify
- * 
+ *
  * Show a notification in the browser's corner.
- * 
- * @param {*} message 
+ *
+ * @param {*} message
  */
 function notify(message) {
   browserSync.notify(message);
@@ -30,7 +35,7 @@ function notify(message) {
 
 /**
  * Config Task
- * 
+ *
  * Build the main YAML config file.
  */
 function config() {
@@ -42,10 +47,10 @@ function config() {
 
 /**
  * Jekyll Task
- * 
+ *
  * Build the Jekyll Site.
- * 
- * @param {*} done 
+ *
+ * @param {*} done
  */
 function jekyll(done) {
   notify('Building Jekyll...');
@@ -57,10 +62,10 @@ function jekyll(done) {
 
 /**
  * Server Task
- * 
+ *
  * Launch server using BrowserSync.
- * 
- * @param {*} done 
+ *
+ * @param {*} done
  */
 function server(done) {
   browserSync({
@@ -73,10 +78,10 @@ function server(done) {
 
 /**
  * Reload Task
- * 
+ *
  * Reload page with BrowserSync.
- * 
- * @param {*} done 
+ *
+ * @param {*} done
  */
 function reload(done) {
   notify('Reloading...');
@@ -86,12 +91,12 @@ function reload(done) {
 
 /**
  * Theme Tasks
- * 
+ *
  * These three tasks are responsible for:
  * 1. Converting src/yml/theme.yml to src/tmp/theme.json
  * 2. Converting src/tmp/theme.json to _sass/_theme.scss
  * 3. Deleting src/tmp
- * 
+ *
  * With these tasks we can apply the theme colors to SVGs and CSS elements using
  * just the src/yml/theme.yml file.
  */
@@ -120,7 +125,7 @@ const theme = gulp.series(yamlTheme, jsonTheme, cleanTheme);
 
 /**
  * Main JS Task
- * 
+ *
  * All regular .js files are collected, minified and concatonated into one
  * single scripts.min.js file (and sourcemap)
  */
@@ -139,7 +144,7 @@ function mainJs() {
 
 /**
  * Preview JS Task
- * 
+ *
  * Copy preview JS files to the assets folder.
  */
 function previewJs() {
@@ -150,14 +155,14 @@ function previewJs() {
 
 /**
  * JavaScript Task
- * 
+ *
  * Run all the JS related tasks.
  */
 const js = gulp.parallel(mainJs, previewJs);
 
 /**
  * Images Task
- * 
+ *
  * All images are optimized and copied to assets folder.
  */
 function images() {
@@ -170,7 +175,7 @@ function images() {
 
 /**
  * Watch Task
- * 
+ *
  * Watch files to run proper tasks.
  */
 function watch() {
@@ -210,7 +215,7 @@ const run = gulp.series(gulp.parallel(js, theme, images), config, jekyll, gulp.p
 
 /**
  * Build Task
- * 
+ *
  * Running just `gulp build` will:
  * - Compile the theme, SASS and JavaScript files
  * - Optimize and copy images to its folder
