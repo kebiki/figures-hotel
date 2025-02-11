@@ -9,3 +9,5 @@ gem "jekyll-paginate-content"
 gem "json"
 gem "bigdecimal"
 gem "base64"
+gem 'github-pages', group: :jekyll_plugins
+gem "faraday-retry"
